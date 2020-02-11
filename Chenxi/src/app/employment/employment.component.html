@@ -1,0 +1,31 @@
+<div class="container"
+  fxLayout="column"
+  fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h2>Employment</h2>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex *ngIf=jobs [@expand]>
+    <mat-grid-list [cols]="breakpoint" rowHeight="340px">
+      <mat-grid-tile *ngFor="let job of jobs">
+        <img height="230px" matListAvatar src="{{BaseURL + job.logo}}" alt="{{BaseURL + job.name}}">
+        <mat-grid-tile-footer>
+          <h1>{{job.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div [hidden]="jobs || errMess">
+    <mat-spinner></mat-spinner>
+    <h4>Loading...Please wait</h4>
+  </div>
+  <div fxFlex *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+
+</div>

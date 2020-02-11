@@ -1,0 +1,196 @@
+{
+  "studies": [
+    {
+      "id": "0",
+      "name": "Xi'an Jiaotong University",
+      "logo": "images/uni-images/xjtu.jpg",
+      "campus": "images/uni-images/xjtu-campus.jpg",
+      "country": "China",
+      "city": "Xi'an",
+      "degree": "BEng",
+      "major": "Information Engineering",
+      "startYear": 2011,
+      "endYear": 2015,
+      "current": false,
+      "description": "Bachelor's Studies",
+      "courses": [
+        {
+          "title": "Statistics and Probability",
+          "grade": "94",
+          "lecturerRating": 4,
+          "date": "2014-11-24T13:17:48.556494Z"
+        },
+        {
+          "title": "Data Structure and Algorithm",
+          "grade": "88",
+          "lecturerRating": 4,
+          "date": "2013-09-05T10:27:22.556394Z"
+        },
+        {
+          "title": "Pattern Recognition",
+          "grade": "96",
+          "lecturerRating": 3,
+          "date": "2015-01-10T12:37:28.556294Z"
+        },
+        {
+          "title": "C Programing Language",
+          "grade": "92",
+          "lecturerRating": 3,
+          "date": "2011-12-29T11:37:18.556394Z"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "University of Erlangen-Nuremberg",
+      "logo": "images/uni-images/fau.png",
+      "campus": "images/uni-images/fau-tech-campus.jpg",
+      "country": "Germany",
+      "city": "Erlangen",
+      "degree": "MSc",
+      "major": "Communications and Multimedia Engineering",
+      "startYear": 2015,
+      "endYear": 2018,
+      "current": false,
+      "description": "Master's Studies",
+      "courses": [
+        {
+          "title": "Statistical Signal Processing",
+          "grade": "1.0",
+          "lecturerRating": 2,
+          "date": "2017-10-02T17:14:23.506094Z"
+        },
+        {
+          "title": "Image and Video Compression",
+          "grade": "1.0",
+          "lecturerRating": 4,
+          "date": "2016-06-26T19:17:59.516094Z"
+        },
+        {
+          "title": "Digital Communications",
+          "grade": "1.0",
+          "lecturerRating": 5,
+          "date": "2016-07-02T16:32:46.556084Z"
+        },
+        {
+          "title": "Speech and Audio Signal Processing",
+          "grade": "1.0",
+          "lecturerRating": 2,
+          "date": "2018-03-06T07:27:55.576094Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "University College London",
+      "logo": "images/uni-images/ucl.png",
+      "campus": "images/uni-images/ucl-campus.jpeg",
+      "country": "UK",
+      "city": "London",
+      "degree": "other",
+      "major": "Electrical Engineering",
+      "startYear": 2016,
+      "endYear": 2017,
+      "current": false,
+      "description": "Erasmus Exchange",
+      "courses": [
+        {
+          "title": "Network and Service Management",
+          "grade": "Distinction",
+          "lecturerRating": 3,
+          "date": "2017-02-20T15:44:18.556096Z"
+        },
+        {
+          "title": "Wireless Communications Principles",
+          "grade": "Distinction",
+          "lecturerRating": 4,
+          "date": "2016-12-22T18:57:27.356094Z"
+        },
+        {
+          "title": "Communications Software and Modelling",
+          "grade": "Distinction",
+          "lecturerRating": 4,
+          "date": "2017-01-13T10:17:08.456094Z"
+        },
+        {
+          "title": "Optical Transmission and Networks",
+          "grade": "Distinction",
+          "lecturerRating": 4,
+          "date": "2017-03-11T09:34:01.596094Z"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "City, University of London",
+      "logo": "images/uni-images/city.jpg",
+      "campus": "images/uni-images/city-campus.jpg",
+      "country": "UK",
+      "city": "London",
+      "degree": "PhD",
+      "major": "Computer Science",
+      "startYear": 2020,
+      "endYear": 2023,
+      "current": true,
+      "description": "PhD Studies",
+      "courses": [
+        {
+          "title": "Privacy-Preseving Deep Learnin",
+          "grade": "TBD",
+          "lecturerRating": 4,
+          "date": "2020-02-02T14:34:31.557094Z"
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "0",
+      "name": "Siemens AG",
+      "logo": "images/company-images/siemens.png",
+      "country": "Germany",
+      "city": "Nuremberg",
+      "title": "Computer Vision Engineer",
+      "start": "October 2017",
+      "end": "March 2018",
+      "current": false,
+      "description": "Internship"
+    },
+    {
+      "id": "1",
+      "name": "Visualix GmbH",
+      "logo": "images/company-images/visualix.jpg",
+      "country": "Germany",
+      "city": "Berlin",
+      "title": "Software Engineer",
+      "start": "April 2018",
+      "end": "December 2018",
+      "current": false,
+      "description": "Full-time"
+    },
+    {
+      "id": "2",
+      "name": "HP Inc",
+      "logo": "images/company-images/hp.png",
+      "country": "UK",
+      "city": "Lonodn",
+      "title": "AR Software Engineer",
+      "start": "January 2019",
+      "end": "March 2020",
+      "current": true,
+      "description": "Full-time"
+    }
+  ],
+  "feedback": [
+    {
+      "firstname": "Jaime",
+      "lastname": "Whitehouse",
+      "email": "chuad@efc.com",
+      "telnum": "23792732508",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "Chenxi is juat the bsat nsojndf . i snasod t actually discourage anyone from using pipes to create collections inside *ngFor expression. It creates huge performance bottleneck because it needs to generate the collection every time the change detector checks for changes.",
+      "id": 1
+    }
+  ]
+}

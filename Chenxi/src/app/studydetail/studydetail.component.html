@@ -1,0 +1,79 @@
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+  <div fxFlex="40" *ngIf="study" [@visibility]="visibility" [@expand]>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{study.name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{BaseURL + study.campus}}" alt="{{BaseURL + study.name}}">
+      <mat-card-content>
+        <p>{{study.description}}, from year {{study.startYear}} to {{study.endYear}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/studydetail', prev]">
+          <span class="fa fa-chevron-left fa-lg"></span>
+        </button>
+        <button mat-button (click)="goBack()">BACK</button>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+        <span class="flex-spacer"></span>
+        <button mat-button [routerLink]="['/studydetail', next]">
+          <span class="fa fa-chevron-right fa-lg"></span>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex="30" *ngIf=study [@visibility]="visibility" [@expand]>
+    <h3>Courses</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let course of study.courses">
+        <p matLine>{{course.title}}</p>
+        <p matLine>Grade: {{course.grade}}</p>
+        <p matLine>Leturer Rating: {{course.lecturerRating}}</p>
+        <p matLine>Date: {{course.date | date}}</p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div fxFlex="20">
+    <h3>Add courses</h3>
+    <form novalidate [formGroup]="courseForm" #fform=ngForm (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field class="full-width">
+          <input matInput formControlName="title" placeholder="Title" type="text" required>
+          <mat-error *ngIf="formErrors.title">{{formErrors.title}}</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="half-width">
+          <input matInput formControlName="grade" placeholder="Grade" type="text" required>
+          <mat-error *ngIf="formErrors.grade">{{formErrors.grade}}</mat-error>
+        </mat-form-field>
+      </p> 
+      <span> Lecture Rating: </span><br><br>
+      <mat-slider min="1" max="5" step="1" value="5" tickInterval="1" thumbLabel></mat-slider>
+      <p>
+        <button mat-button type="submit" class="background-primary text-floral-white"
+          [disabled]="courseForm.invalid">Submit</button>
+      </p>
+    </form> 
+  </div>
+
+  <div fxFlex [hidden]="study || errorMsg">
+    <mat-spinner></mat-spinner>
+    <h4>Loading...Please wait</h4>
+  </div>
+  <div fxFlex *ngIf="errorMsg">
+    <h2>Error</h2>
+    <h4>{{errorMsg}}</h4>
+  </div>
+
+</div>

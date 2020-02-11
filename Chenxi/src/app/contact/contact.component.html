@@ -1,0 +1,112 @@
+<div class="container"
+  fxLayout="column"
+  fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+        <h3>Contact Me</h3>
+        <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <h3>Location Information</h3> 
+    <div fxLayout="column" fxLayout.gt-sm="row">
+      <div fxFlex="50" fxFlexOffset="20px">
+        <h4>Address</h4>
+        <address>
+          1 Mark Square WeWork<br> London, EC2A 4EG<br><br>
+          <i class="fa fa-phone"></i>: +44 7388006532<br><br>
+          <i class="fa fa-envelope"></i>:
+          <a href="mailto:c.whitehouse@email.com">c.whitehouse@email.com</a>
+        </address>
+        <br>
+        <div>
+          <a mat-raised-button href="tel:+447388253568"><i class="fa fa-phone"></i> Call</a>
+          <a mat-raised-button><i class="fa fa-skype"></i> Skype</a>
+          <a mat-raised-button href="mailto:c.whitehouse@email.com"><i class="fa fa-envelope-o"></i> Email</a>
+        </div>
+        </div>
+      <div fxFlex="40">
+        <h4>Map of my Location</h4>
+        <img height="200hv" src="./assets/map.png" alt="map">
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxFlexOffset="20px" class="form-size">
+    <h3>Share your experiences</h3>
+    <!-- use reactive form -->
+    <!-- <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p> -->
+    <div [hidden]="submitting">
+      <form novalidate [formGroup]="feedbackForm" #fform=ngForm (ngSubmit)="onSubmit()">
+        <p>
+          <mat-form-field class="half-width">
+            <!-- <input matInput formControlName="firstname" placeholder="First Name" type="text">
+            <mat-error *ngIf="feedbackForm.get('firstname').hasError('required') && 
+              feedbackForm.get('firstname').touched">Frist name is required</mat-error> -->
+
+            <!-- easier way to validate -->
+            <input matInput formControlName="firstname" placeholder="First Name" type="text" required>
+            <mat-error *ngIf="formErrors.firstname">{{formErrors.firstname}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="half-width">
+            <input matInput formControlName="lastname" placeholder="Last Name" type="text" required>
+            <mat-error *ngIf="formErrors.lastname">{{formErrors.lastname}}</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="half-width">
+            <input matInput formControlName="email" placeholder="Email" type="email" email required>
+            <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="half-width">
+            <input matInput formControlName="telnum" placeholder="Tel Number" type="tel" pattern="[0-9]*" required>
+            <mat-error *ngIf="formErrors.telnum">{{formErrors.telnum}}</mat-error>
+          </mat-form-field>
+        </p>
+        <table class="form-size">
+          <td>
+            <mat-slide-toggle formControlName="agree">May I contact you?</mat-slide-toggle>
+          </td>
+          <td>
+            <mat-select formControlName="contacttype" placeholder="How?">
+              <mat-option *ngFor="let ctype of contactType" [value]="ctype">
+                {{ ctype }}
+              </mat-option>          
+            </mat-select>
+          </td>
+        </table>
+        <p>
+          <mat-form-field class="full-width">
+            <textarea matInput  formControlName="message" placeholder="Your Feedback" rows=6></textarea>
+          </mat-form-field>
+        </p>
+        <button mat-button type="submit" class="background-primary text-floral-white"
+          [disabled]="feedbackForm.invalid">Submit</button>
+      </form> 
+    </div>
+
+    <div *ngIf="submitting && !feedback">
+      <h4>Submitting Form...</h4>
+      <mat-spinner></mat-spinner> 
+    </div>
+
+    <div *ngIf="submitting && feedback">
+      <h4>Your Submission</h4>
+      <!-- <mat-list>
+        <mat-list-item *ngFor="let item of feedback | keyvalue">
+          <p>{{item.key}}: {{item.value}}</p>
+        </mat-list-item>
+      </mat-list> -->
+      <p>First Name: {{feedback.firstname}}</p>
+      <p>Last Name: {{feedback.lastname}}</p>
+      <p>Email: {{feedback.email}}</p>
+      <p>Tel Number: {{feedback.telnum}}</p>
+      <p>Agree to Contact: {{feedback.agree}}</p>
+      <p>How?: {{feedback.contacttype}}</p>
+      <p>Your Feedback: {{feedback.message}}</p>
+    </div>
+
+  </div>
+</div>

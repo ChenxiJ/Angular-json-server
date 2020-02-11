@@ -1,0 +1,18 @@
+$lt-gray: #ddd;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #b8d6f7;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.footer{
+    background-color: $background-pale;
+    @include zero-margin(20px, 0px);
+}
+
+.btn-github {color:#fff!important; background-color:#000000!important; margin: 5px}
+.btn-linkedin{color:#fff!important; background-color:#007bb6!important; margin: 5px}
+.btn-mail{color:#fff!important; background-color:#512DA8!important; margin: 5px}

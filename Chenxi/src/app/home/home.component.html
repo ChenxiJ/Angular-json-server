@@ -1,0 +1,52 @@
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
+
+<mat-card *ngIf="study" fxFlex="35" [@expand]>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3>Current Studies</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{BaseURL + study.logo}}" alt="{{BaseURL + study.name}}">
+  <mat-card-content>
+    <p>{{study.description}}<br>{{study.major}}
+    </p>
+  </mat-card-content>
+</mat-card>
+<div [hidden]="study || studyErrMess">
+  <mat-spinner></mat-spinner>
+  <h4>Loading...Please wait</h4>
+</div>
+<div fxFlex *ngIf="studyErrMess">
+  <h2>Error</h2>
+  <h4>{{studyErrMess}}</h4>
+</div>
+
+<mat-card *ngIf="job" fxFlex="35" [@expand]>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3>Current Job</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{BaseURL + job.logo}}" alt="{{BaseURL + job.name}}">
+  <mat-card-content>
+    <p>{{job.description}}<br>{{job.title}}
+    </p>
+  </mat-card-content>
+</mat-card>
+<div [hidden]="job || jobErrMess">
+  <mat-spinner></mat-spinner>
+  <h4>Loading...Please wait</h4>
+</div>
+<div fxFlex *ngIf="jobErrMess">
+  <h2>Error</h2>
+  <h4>{{jobErrMess}}</h4>
+</div>
+
+</div>
